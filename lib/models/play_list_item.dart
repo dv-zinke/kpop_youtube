@@ -175,8 +175,8 @@ class Thumbnails {
     thumbnailsDefault: Default.fromJson(json["default"]),
     medium: Default.fromJson(json["medium"]),
     high: Default.fromJson(json["high"]),
-    standard: Default.fromJson(json["standard"]),
-    maxres: Default.fromJson(json["maxres"]),
+    standard: null == json["standard"] ? null : Default.fromJson(json["standard"]),
+    maxres:  null == json["maxres"] ? null : Default.fromJson(json["maxres"]),
   );
 
   Map<String, dynamic> toJson() => {
