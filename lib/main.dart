@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:kpop_youtube/screens/home_screen.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(MyApp());
 }
 

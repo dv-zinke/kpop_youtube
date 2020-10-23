@@ -15,7 +15,8 @@ class Services {
     Map<String, String> parameters = {
       'part': 'snippet,contentDetails',
       'playlist_id': PLAYLIST_ID,
-      'key': ApiKey.youtubeKey
+      'key': ApiKey.youtubeKey,
+      'max_results':"10"
     };
 
     Map<String, String> headers = {
