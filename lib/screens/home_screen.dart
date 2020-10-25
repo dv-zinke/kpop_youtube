@@ -81,8 +81,18 @@ class _HomeScreenState extends State<HomeScreen> {
                         padding: EdgeInsets.all(20),
                         child: Row(
                           children: [
-                            CachedNetworkImage(
-                              imageUrl: item.snippet.thumbnails.thumbnailsDefault.url,
+                            DecoratedBox(
+                              decoration: BoxDecoration(color: Colors.black),
+                              child: IndexedStack(
+                                children: [
+                                  CachedNetworkImage(
+                                    imageUrl: item.snippet.thumbnails.thumbnailsDefault.url,
+                                  ),
+                                  Positioned(child:
+                                  Text("A", style: TextStyle(color: Colors.white),), bottom: 0, right: 0,)
+
+                                ],
+                              ),
                             ),
                             SizedBox(width: 20,),
                             Flexible(child: Text(item.snippet.title)),
