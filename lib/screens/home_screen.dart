@@ -87,6 +87,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                 children: [
                                   CachedNetworkImage(
                                     imageUrl: item.snippet.thumbnails.thumbnailsDefault.url,
+                                    placeholder: (context, url) => CircularProgressIndicator(),
+                                    errorWidget: (context, url, error) => Icon(Icons.error),
                                   ),
                                   Positioned(child:
                                   Text("A", style: TextStyle(color: Colors.white),), bottom: 0, right: 0,)
