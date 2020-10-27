@@ -4,6 +4,7 @@ import 'package:kpop_youtube/models/play_list_item.dart';
 import 'package:kpop_youtube/screens/YoutubeList1.dart';
 import 'package:kpop_youtube/screens/video_play2.dart';
 import 'package:kpop_youtube/utils/services.dart';
+import 'package:kpop_youtube/widget/side_menu.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -33,23 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            DrawerHeader(
-              child: Center(child: Text("KPOP TUBE", style: TextStyle(color: Colors.white, fontSize: 26),)),
-              decoration: BoxDecoration(color: Colors.red),
-            ),
-            ListTile(
-              title: Text("dd 1"),
-              onTap: ()=>{
-
-              },
-            )
-          ],
-        ),
-      ),
+      drawer: SideMenu(),
       appBar: AppBar(
         title: Text("KPOPTUBE"),
       ),
