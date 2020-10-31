@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:kpop_youtube/models/play_list_item.dart';
 import 'package:kpop_youtube/screens/video_play2.dart';
+import 'package:kpop_youtube/utils/googleAdmob.dart';
 import 'package:kpop_youtube/utils/services.dart';
 
 class YoutubeList1 extends StatefulWidget {
@@ -53,14 +54,14 @@ class _YoutubeList1State extends State<YoutubeList1> {
                   Item item = _playlistItem.items[index];
                   return InkWell(
                     onTap: () async {
-                      print(
-                          "https://youtube.com/embed/${item.snippet.resourceId.videoId}?autoplay=1");
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) {
-                            return VideoPlay2(
-                              videoId: item.snippet.resourceId.videoId,
-                            );
-                          }));
+                      GoogleAdmob().hideBanner();
+                      print("A");
+//                      await Navigator.push(context,
+//                          MaterialPageRoute(builder: (context) {
+//                            return VideoPlay2(
+//                              videoId: item.snippet.resourceId.videoId,
+//                            );
+//                          }));
                     },
                     child: Container(
                       padding: EdgeInsets.all(10),
@@ -105,7 +106,8 @@ class _YoutubeList1State extends State<YoutubeList1> {
                 },
               ),
             ),
-          )
+          ),
+          SizedBox(height: 50,)
         ],
       ),
     );
