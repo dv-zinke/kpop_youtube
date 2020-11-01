@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:kpop_youtube/models/play_list_item.dart';
 import 'package:kpop_youtube/screens/YoutubeList1.dart';
 import 'package:kpop_youtube/screens/video_play2.dart';
+import 'package:kpop_youtube/utils/googleAdmob.dart';
 import 'package:kpop_youtube/utils/services.dart';
 import 'package:kpop_youtube/widget/side_menu.dart';
 
@@ -12,23 +13,12 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  PlaylistItem _playlistItem;
-  bool _isLoading;
-  ScrollController _scrollController;
+  GoogleAdmob adMob = GoogleAdmob();
 
   @override
   void initState() {
     super.initState();
-    _isLoading = true;
-    _scrollController = ScrollController();
-    _getPlayListItem();
-  }
-
-  _getPlayListItem() async {
-    _playlistItem = await Services.getPlayListItem();
-    setState(() {
-      _isLoading = false;
-    });
+    adMob.init();
   }
 
   @override
