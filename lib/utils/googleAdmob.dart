@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:kpop_youtube/utils/ApiKey.dart';
 
 class GoogleAdmob {
-  static BannerAd _bannerAd;
+  BannerAd _bannerAd;
   InterstitialAd _interstitialAd;
   bool disposed;
 
@@ -27,12 +27,7 @@ class GoogleAdmob {
         size: AdSize.banner,
         targetingInfo: targetingInfo,
         listener: (MobileAdEvent event) {
-          if (event == MobileAdEvent.loaded) if (disposed)
-            _bannerAd.dispose();
-          else
-            _bannerAd.show(
-                anchorOffset: 60,
-                anchorType: AnchorType.bottom);
+
         });
   }
 
@@ -52,15 +47,15 @@ class GoogleAdmob {
       ..show();
   }
 
-  void displayBanner() async {
-    disposed = false;
-    if (_bannerAd == null) _bannerAd = createBannerAd();
-    _bannerAd.load();
+  displayBanner() {
+    if (_bannerAd == null) _bannerAd = createBannerAd()..load();
+    _bannerAd..show();
   }
 
-  void hideBanner() async {
-    await _bannerAd?.dispose();
-    disposed = true;
-    _bannerAd = null;
+  hideBanner()  {
+    if(_bannerAd != null) {
+      _bannerAd.dispose();
+      _bannerAd = createBannerAd()..load();
+    }
   }
 }
