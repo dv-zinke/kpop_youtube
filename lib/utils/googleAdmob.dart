@@ -17,8 +17,8 @@ class GoogleAdmob {
     _interstitialAd = createInterstitialAd();
     _bannerAd = createBannerAd();
 
-    print(_bannerAd);
-    print("ㅇㅇ");
+    _bannerAd..load()..show();
+    print("A");
   }
 
   BannerAd createBannerAd() {
@@ -53,7 +53,9 @@ class GoogleAdmob {
   }
 
   hideBanner()  {
+    print("C");
     if(_bannerAd != null) {
+      print("Z");
       _bannerAd.dispose();
       _bannerAd = createBannerAd()..load();
     }

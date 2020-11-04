@@ -55,13 +55,12 @@ class _YoutubeList1State extends State<YoutubeList1> {
                   return InkWell(
                     onTap: () async {
                       GoogleAdmob().hideBanner();
-                      print("A");
-//                      await Navigator.push(context,
-//                          MaterialPageRoute(builder: (context) {
-//                            return VideoPlay2(
-//                              videoId: item.snippet.resourceId.videoId,
-//                            );
-//                          }));
+                      await Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                            return VideoPlay2(
+                              videoId: item.snippet.resourceId.videoId,
+                            );
+                          }));
                     },
                     child: Container(
                       padding: EdgeInsets.all(10),
