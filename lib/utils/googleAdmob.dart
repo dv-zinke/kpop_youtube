@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:kpop_youtube/utils/ApiKey.dart';
 
 class GoogleAdmob {
-  BannerAd _bannerAd;
+  static BannerAd _bannerAd;
   InterstitialAd _interstitialAd;
   bool disposed;
 
