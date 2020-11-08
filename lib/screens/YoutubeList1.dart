@@ -6,6 +6,9 @@ import 'package:kpop_youtube/utils/googleAdmob.dart';
 import 'package:kpop_youtube/utils/services.dart';
 
 class YoutubeList1 extends StatefulWidget {
+  final String playListId;
+
+  const YoutubeList1({Key key, this.playListId}) : super(key: key);
   @override
   _YoutubeList1State createState() => _YoutubeList1State();
 }
