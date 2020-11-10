@@ -12,11 +12,23 @@ class SideMenu extends StatelessWidget {
             decoration: BoxDecoration(color: Colors.red),
           ),
           ListTile(
-            title: Text("dd 1"),
+            title: Text("KPOP 2020"),
             onTap: ()=>{
 
             },
-          )
+          ),
+          ListTile(
+            title: Text("KPOP 2019"),
+            onTap: ()=>{
+
+            },
+          ),
+          ListTile(
+            title: Text("KPOP 2018"),
+            onTap: ()=>{
+
+            },
+          ),
         ],
       ),
     );
