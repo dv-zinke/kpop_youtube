@@ -37,7 +37,7 @@ class _VideoPlay2State extends State<VideoPlay2> {
       initialHeaders: {},
       initialOptions: InAppWebViewGroupOptions(
         crossPlatform: InAppWebViewOptions(
-          debuggingEnabled: true,
+          debuggingEnabled: false,
           mediaPlaybackRequiresUserGesture: false
         ),
       ),

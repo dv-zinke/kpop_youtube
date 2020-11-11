@@ -53,7 +53,7 @@ class GoogleAdmob {
   }
 
   hideBanner()  {
-    print("C");
+    print(_bannerAd);
     if(_bannerAd != null) {
       print("Z");
       _bannerAd.dispose();
