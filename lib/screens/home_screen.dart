@@ -14,6 +14,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   GoogleAdmob adMob = GoogleAdmob();
+  String playListId;
 
   @override
   void initState() {
@@ -21,14 +22,18 @@ class _HomeScreenState extends State<HomeScreen> {
     adMob.init();
   }
 
+  void setPlayListId() {
+    print("zz");
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: SideMenu(),
+      drawer: SideMenu(onTap: setPlayListId,),
       appBar: AppBar(
         title: Text("KPOPTUBE"),
       ),
-      body:YoutubeList1()
+      body:YoutubeList1(playListId: playListId,)
     );
   }
 }

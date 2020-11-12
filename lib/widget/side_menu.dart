@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
 class SideMenu extends StatelessWidget {
+
+  final Function onTap;
+
+  const SideMenu({Key key, this.onTap}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -13,9 +17,7 @@ class SideMenu extends StatelessWidget {
           ),
           ListTile(
             title: Text("KPOP 2020"),
-            onTap: ()=>{
-
-            },
+            onTap: onTap,
           ),
           ListTile(
             title: Text("KPOP 2019"),
