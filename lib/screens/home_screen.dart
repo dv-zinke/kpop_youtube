@@ -22,8 +22,9 @@ class _HomeScreenState extends State<HomeScreen> {
     adMob.init();
   }
 
-  void setPlayListId() {
-    print("zz");
+  void setPlayListId(String z) {
+    print("Z");
+    print(z);
   }
 
   @override

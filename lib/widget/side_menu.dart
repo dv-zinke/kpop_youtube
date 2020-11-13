@@ -17,18 +17,20 @@ class SideMenu extends StatelessWidget {
           ),
           ListTile(
             title: Text("KPOP 2020"),
-            onTap: onTap,
+            onTap: ()=>{
+              onTap("KPOP 2020")
+            },
           ),
           ListTile(
             title: Text("KPOP 2019"),
             onTap: ()=>{
-
+              onTap("KPOP 2019")
             },
           ),
           ListTile(
             title: Text("KPOP 2018"),
             onTap: ()=>{
-
+              onTap("KPOP 2018")
             },
           ),
         ],
