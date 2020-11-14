@@ -25,6 +25,10 @@ class _HomeScreenState extends State<HomeScreen> {
   void setPlayListId(String z) {
     print("Z");
     print(z);
+
+    setState(() {
+      playListId = z;
+    });
   }
 
   @override
